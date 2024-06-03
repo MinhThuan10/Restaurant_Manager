@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3D98C8B2-589E-46BD-9205-C8557B837BD3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RestaurantManager</RootNamespace>
+    <AssemblyName>RestaurantManager</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Docking">
+      <HintPath>..\Krypton-master\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Navigator">
+      <HintPath>..\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Ribbon">
+      <HintPath>..\Krypton-master\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit">
+      <HintPath>..\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Workspace">
+      <HintPath>..\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.5, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.4.5\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO\BillDAO.cs" />
+    <Compile Include="DAO\BillDetailsDAO.cs" />
+    <Compile Include="GUI\BillDetailsSubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\BillDetailsSubForm.Designer.cs">
+      <DependentUpon>BillDetailsSubForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\CustomerDAO.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\EmployeeDAO.cs" />
+    <Compile Include="DAO\MaterialDAO.cs" />
+    <Compile Include="DAO\MaterialPurchaseDAO.cs" />
+    <Compile Include="DAO\ProductDAO.cs" />
+    <Compile Include="DAO\ProviderDAO.cs" />
+    <Compile Include="DAO\ShiftDAO.cs" />
+    <Compile Include="DAO\ShiftTableDAO.cs" />
+    <Compile Include="DTO\BillDetailsDTO.cs" />
+    <Compile Include="DTO\BillDTO.cs" />
+    <Compile Include="DTO\CustomerDTO.cs" />
+    <Compile Include="DTO\EmployeeDTO.cs" />
+    <Compile Include="DTO\MaterialDTO.cs" />
+    <Compile Include="DTO\MaterialPurchaseDTO.cs" />
+    <Compile Include="DTO\ProductDTO.cs" />
+    <Compile Include="DTO\ProviderDTO.cs" />
+    <Compile Include="DTO\ShiftDTO.cs" />
+    <Compile Include="DTO\ShiftTableDTO.cs" />
+    <Compile Include="GUI\AddEmployeesSubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AddEmployeesSubForm.Designer.cs">
+      <DependentUpon>AddEmployeesSubForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AddMaterialPurchaseSubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AddMaterialPurchaseSubForm.Designer.cs">
+      <DependentUpon>AddMaterialPurchaseSubForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AddMaterialsSubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AddMaterialsSubForm.Designer.cs">
+      <DependentUpon>AddMaterialsSubForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MP_DetailsSubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MP_DetailsSubForm.Designer.cs">
+      <DependentUpon>MP_DetailsSubForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UpdateCustomersSubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UpdateCustomersSubForm.Designer.cs">
+      <DependentUpon>UpdateCustomersSubForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UpdateEmployeesSubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UpdateEmployeesSubForm.Designer.cs">
+      <DependentUpon>UpdateEmployeesSubForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UpdateMaterialsSubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UpdateMaterialsSubForm.Designer.cs">
+      <DependentUpon>UpdateMaterialsSubForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_SalesMetrics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_SalesMetrics.Designer.cs">
+      <DependentUpon>UC_SalesMetrics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowMessage.cs" />
+    <Compile Include="GUI\AddBillsSubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AddBillsSubForm.Designer.cs">
+      <DependentUpon>AddBillsSubForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AddCustomersSubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AddCustomersSubForm.Designer.cs">
+      <DependentUpon>AddCustomersSubForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManagerForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManagerForm1.Designer.cs">
+      <DependentUpon>ManagerForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_Bills.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_Bills.Designer.cs">
+      <DependentUpon>UC_Bills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_Customers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_Customers.Designer.cs">
+      <DependentUpon>UC_Customers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_Employees.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_Employees.Designer.cs">
+      <DependentUpon>UC_Employees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_MaterialPurchase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_MaterialPurchase.Designer.cs">
+      <DependentUpon>UC_MaterialPurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_Materials.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_Materials.Designer.cs">
+      <DependentUpon>UC_Materials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_Products.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_Products.Designer.cs">
+      <DependentUpon>UC_Products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_Tables.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_Tables.Designer.cs">
+      <DependentUpon>UC_Tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyNhaHangAnUongDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyNhaHangAnUongDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="GUI\BillDetailsSubForm.resx">
+      <DependentUpon>BillDetailsSubForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AddBillsSubForm.resx">
+      <DependentUpon>AddBillsSubForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AddCustomersSubForm.resx">
+      <DependentUpon>AddCustomersSubForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AddEmployeesSubForm.resx">
+      <DependentUpon>AddEmployeesSubForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AddMaterialPurchaseSubForm.resx">
+      <DependentUpon>AddMaterialPurchaseSubForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AddMaterialsSubForm.resx">
+      <DependentUpon>AddMaterialsSubForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ManagerForm1.resx">
+      <DependentUpon>ManagerForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MP_DetailsSubForm.resx">
+      <DependentUpon>MP_DetailsSubForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UpdateCustomersSubForm.resx">
+      <DependentUpon>UpdateCustomersSubForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UpdateEmployeesSubForm.resx">
+      <DependentUpon>UpdateEmployeesSubForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UpdateMaterialsSubForm.resx">
+      <DependentUpon>UpdateMaterialsSubForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\UC_Bills.resx">
+      <DependentUpon>UC_Bills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\UC_Customers.resx">
+      <DependentUpon>UC_Customers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\UC_Employees.resx">
+      <DependentUpon>UC_Employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\UC_MaterialPurchase.resx">
+      <DependentUpon>UC_MaterialPurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\UC_Materials.resx">
+      <DependentUpon>UC_Materials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\UC_Products.resx">
+      <DependentUpon>UC_Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\UC_SalesMetrics.resx">
+      <DependentUpon>UC_SalesMetrics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\UC_Tables.resx">
+      <DependentUpon>UC_Tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="QuanLyNhaHangAnUongDataSet.xsc">
+      <DependentUpon>QuanLyNhaHangAnUongDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyNhaHangAnUongDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyNhaHangAnUongDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyNhaHangAnUongDataSet.xss">
+      <DependentUpon>QuanLyNhaHangAnUongDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Icons\ManagerIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Icons\bill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Icons\dinner-table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Icons\Customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Icons\employee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Icons\carrots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Icons\checklist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Icons\scheduling.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Icons\revenue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Icons\restaurant-building.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Icons\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Icons\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Icons\person_icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Icons\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Icons\BlueRoom.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
